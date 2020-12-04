@@ -57,7 +57,8 @@ END {
     print nvalid
 }
 
-function validate_byr(byr) {
+function validate_byr(byr)
+{
     if (match(byr, "^[12][09][0-9][0-9]$")) {
         yr = int(byr)
         if (yr >= 1920 && yr <= 2002) {
@@ -67,7 +68,8 @@ function validate_byr(byr) {
     return 0
 }
 
-function validate_iyr(iyr) {
+function validate_iyr(iyr)
+{
     if (match(iyr, "20[12][0-9]")) {
         yr = int(iyr)
         if (yr >= 2010 && yr <= 2020) {
@@ -77,7 +79,8 @@ function validate_iyr(iyr) {
     return 0
 }
 
-function validate_eyr(eyr) {
+function validate_eyr(eyr)
+{
     if (match(eyr, "^20[23][0-9]$")) {
         yr = int(eyr)
         if (yr >= 2020 && yr <= 2030) {
@@ -87,7 +90,8 @@ function validate_eyr(eyr) {
     return 0
 }
 
-function validate_hgt(hgt) {
+function validate_hgt(hgt)
+{
     if (index(hgt, "in")) {
         inches = int(substr(hgt, 1, index(hgt, "in")))
         return (inches >= 59 && inches <= 76)
@@ -98,11 +102,13 @@ function validate_hgt(hgt) {
     return 0
 }
 
-function validate_hcl(hcl) {
+function validate_hcl(hcl)
+{
     return match(hcl, "^#[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]$")
 }
 
-function validate_ecl(ecl) {
+function validate_ecl(ecl)
+{
     valid_ecl["amb"]
     valid_ecl["blu"]
     valid_ecl["brn"]
@@ -113,6 +119,7 @@ function validate_ecl(ecl) {
     return ecl in valid_ecl
 }
 
-function validate_pid(pid) {
+function validate_pid(pid)
+{
     return match(pid, "^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$")
 }
