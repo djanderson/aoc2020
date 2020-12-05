@@ -12,7 +12,6 @@
 BEGIN {
     RS = ""   # enable multiline records
     FS = " "  # "\n" is also a default FS when RS is null str
-    split("byr iyr eyr hgt hcl ecl pid", required_fields)
     required_fields["byr"] = ""
     required_fields["iyr"] = ""
     required_fields["eyr"] = ""
